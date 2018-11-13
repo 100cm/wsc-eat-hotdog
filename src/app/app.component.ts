@@ -1,5 +1,5 @@
-import {Component, ComponentFactoryResolver, NgZone, OnInit, ViewChild} from '@angular/core';
-import {fromEvent, interval, merge, Observable, Subscription, timer} from 'rxjs';
+import {ChangeDetectionStrategy, Component, ComponentFactoryResolver, NgZone, OnInit, ViewChild} from '@angular/core';
+import {from, fromEvent, interval, merge, Observable, Subscription, timer} from 'rxjs';
 import {concatAll, concatMap, filter, map, mergeAll, mergeMap, switchMap, take, takeUntil} from 'rxjs/operators';
 import {PointContainerComponent} from './point-container/point-container.component';
 import {PointBonusComponent} from './point-bonus/point-bonus.component';
@@ -37,8 +37,9 @@ export class AppComponent implements OnInit {
   ngOnInit(): void {
 
     let mouseMove = fromEvent(document, 'mousemove');
+    let touchMove = fromEvent(document, 'touchmove')
 
-    mouseMove.subscribe((event: MouseEvent) => {
+    merge(touchMove,mouseMove).subscribe((event: MouseEvent) => {
       this.mouse_position = {x: event.x};
     });
 
