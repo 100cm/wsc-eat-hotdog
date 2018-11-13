@@ -12,11 +12,11 @@
   </div>
   <ng-container *ngFor="let item of hot_dogs">
     <div class="wsc-hot-dogs" [style.left.px]="item.x" [ngStyle]="{transform: 'translateY('+item.y +'px)'}">
-      <img src="/assets/hot-dog.png" width="40px" height="70px">
+      <img src="./assets/hot-dog.png" width="40px" height="70px">
     </div>
   </ng-container>
   <div class="wsc" [style.left.px]="mouse_position.x">
-    <img width="80px" height="80px" src="/assets/wangsicong.png">
+    <img width="80px" height="80px" src="./assets/wangsicong.png">
   </div>
   <app-point-container></app-point-container>
 </div>
