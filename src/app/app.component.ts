@@ -44,14 +44,14 @@ export class AppComponent implements OnInit {
 
     this.observable = interval(500).pipe(map(index => {
       this.ngZone.runOutsideAngular(_ => {
-        this.hot_dogs.push({
-            x: Math.random() * document.body.offsetWidth,
-            y: 0
-          }
-        )
-      }
-      )
-      return index
+          this.hot_dogs.push({
+              x: Math.random() * document.body.offsetWidth,
+              y: 0
+            }
+          );
+        }
+      );
+      return index;
     }), map((index) => interval(10).pipe(map(_ => {
       if (this.hot_dogs[index]) {
         this.ngZone.runOutsideAngular(_ => {
@@ -89,6 +89,7 @@ export class AppComponent implements OnInit {
 
   startGame() {
     this.score = 0;
+    this.next_time = 30;
     this.started = true;
     this.subscription = this.observable.subscribe(data => {
       this.ngZone.runOutsideAngular(_ => {
@@ -118,7 +119,7 @@ export class AppComponent implements OnInit {
   }
 
   goGitHub() {
-    window.location.href = 'https://github.com/100cm';
+    window.location.href = 'https://github.com/100cm/wsc-eat-hotdog';
   }
 
 }
