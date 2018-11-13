@@ -88,6 +88,7 @@ export class AppComponent implements OnInit {
   }
 
   startGame() {
+    this.score = 0;
     this.started = true;
     this.subscription = this.observable.subscribe(data => {
       this.ngZone.runOutsideAngular(_ => {
@@ -114,7 +115,6 @@ export class AppComponent implements OnInit {
     this.next_sub.unsubscribe();
     this.subscription.unsubscribe();
     this.started = false;
-    this.score = 0;
   }
 
   goGitHub() {
