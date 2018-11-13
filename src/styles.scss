@@ -1,0 +1,72 @@
+/* You can add global styles to this file, and also import other style files */
+.wsc {
+  position: absolute;
+  bottom: 20px
+}
+
+.tanwan-wsc {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.wsc-hot-dogs {
+  position: absolute;
+}
+
+body, html {
+  width: 100%;
+  height: 100%;
+}
+
+.plus-1 {
+  font-weight: 700;
+  font-size: 18px;
+  position: absolute;
+  bottom: 60px;
+  animation: bounus 1s;
+}
+
+@keyframes bounus {
+  0% {
+    transform: scale(0.8)
+  }
+  50% {
+    transform: scale(1.5)
+  }
+  100% {
+    transform: scale(1)
+  }
+}
+
+.score-bar {
+  font-size: 36px;
+  font-weight: 700;
+}
+
+.start-game {
+  border: 2px solid black;
+  position: relative;
+  left: 50%;
+  text-align: center;
+  padding-top: 10px;
+  width: 220px;
+  height: 100px;
+  top: 50%;
+  transform: translateY(-50%) translateX(-50%);
+}
+
+.start-button {
+  border: 2px solid black;
+  padding: 8px 12px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.github{
+  margin-left: 10px;
+  border: 2px solid black;
+  padding: 8px 12px;
+  font-size: 16px;
+  cursor: pointer;
+}
